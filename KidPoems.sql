@@ -90,3 +90,23 @@ LEFT JOIN PoemEmotion ON Emotion.Id = EmotionId
 LEFT JOIN Poem ON Poem.id = PoemId
 GROUP BY Emotion.Name
 ORDER BY count; */
+
+/*     EXERCISE 19    */
+/* SELECT Grade.Name, COUNT(PoemEmotion.EmotionId) AS NumberOfPoems
+FROM Grade
+LEFT JOIN Author ON grade.id = Author.GradeId
+LEFT JOIN Poem ON author.id = Poem.AuthorId
+LEFT JOIN PoemEmotion ON poem.id = PoemEmotion.PoemId
+WHERE EmotionId = 4
+GROUP BY Grade.Name; */
+
+/*     EXERCISE 20    */
+/* SELECT Gender.Name, COUNT(PoemEmotion.EmotionId) AS NumberOfPoems
+FROM Gender
+LEFT JOIN Author ON gender.id = Author.GenderId
+LEFT JOIN Poem ON author.id = Poem.AuthorId
+LEFT JOIN PoemEmotion ON poem.id = PoemEmotion.PoemId
+WHERE EmotionId = 2
+GROUP BY Gender.Name
+ORDER BY NumberOfPoems; */
+
