@@ -39,3 +39,37 @@ WHERE GradeId = 3; */
 WHERE GradeId = 3 OR GradeId = 2 OR GradeId = 1; */
 
 /*     EXERCISE 11    */
+/* SELECT COUNT(Poem.Id)
+FROM Poem
+LEFT JOIN Author on poem.AuthorId = Author.Id
+LEFT JOIN Grade on author.GradeId = grade.id
+WHERE grade.id = 4; */
+
+/*     EXERCISE 12    */
+/* SELECT COUNT(Poem.Id)
+FROM Poem
+LEFT JOIN Author on poem.AuthorId = Author.Id
+LEFT JOIN Grade on author.GradeId = grade.id
+GROUP BY grade.id; */
+
+/*     EXERCISE 13    */
+/* SELECT COUNT(Author.Id), Grade.Id
+FROM Author
+LEFT JOIN Grade on author.GradeId = grade.id
+GROUP BY Grade.id
+ORDER BY Grade.id; */
+
+/*     EXERCISE 14    */
+/* SELECT Title, WordCount 
+FROM Poem
+Where WordCount = ( SELECT MAX(WordCount) FROM Poem); */
+
+/*     EXERCISE 15    */
+
+
+/*     EXERCISE 16    */
+SELECT COUNT(Poem.Id)
+FROM Poem
+LEFT JOIN PoemEmotion on Poem.id = PoemId
+LEFT JOIN Emotion ON Emotion.id = EmotionId
+WHERE Emotion.id = 3; 
