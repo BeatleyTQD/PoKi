@@ -68,8 +68,25 @@ Where WordCount = ( SELECT MAX(WordCount) FROM Poem); */
 
 
 /*     EXERCISE 16    */
-SELECT COUNT(Poem.Id)
+/* SELECT COUNT(Poem.Id)
 FROM Poem
 LEFT JOIN PoemEmotion on Poem.id = PoemId
 LEFT JOIN Emotion ON Emotion.id = EmotionId
-WHERE Emotion.id = 3; 
+WHERE Emotion.id = 3; */
+
+/*     EXERCISE 17    */ 
+/* SELECT COUNT(Poem.Id)
+FROM Poem
+LEFT JOIN PoemEmotion on Poem.id = PoemId
+LEFT JOIN Emotion ON Emotion.id = EmotionId
+WHERE Emotion.id IS NULL; */
+
+/*     EXERCISE 18    */
+/* SELECT
+	TOP 1 Emotion.Name,
+	COUNT(Poem.id) as count
+FROM Emotion
+LEFT JOIN PoemEmotion ON Emotion.Id = EmotionId
+LEFT JOIN Poem ON Poem.id = PoemId
+GROUP BY Emotion.Name
+ORDER BY count; */
